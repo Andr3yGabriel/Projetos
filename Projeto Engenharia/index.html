@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gerenciador De Contas</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <h1>Controle de Contas</h1>
+  <p>Preencha as informações abaixo:</p>
+  <input type="text" id="nomeConta" placeholder="Nome da Conta">
+  <input type="number" id="valorConta" placeholder="Valor da Conta">
+  <button onclick="adicionarConta()">Adicionar Conta</button>
+
+  <h2>Contas Adicionadas:</h2>
+  <ul id="listaContas"></ul>
+
+  <p>Insira o valor do seu salário em reais:</p>
+  <input type="number" id="salario" placeholder="Salário">
+  <button onclick="calcularPorcentagem()">Calcular Porcentagem</button>
+  <p id="porcentagem"></p>
+    </body>
+</html>
