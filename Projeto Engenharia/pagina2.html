@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gerenciador de Contas</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <span>
+                <a href="index.html" class="icon-close"><ion-icon name="close-outline"></ion-icon></a>
+            </span>
+            <div class="form-box cadastroContas">
+                <h2>Cadastro de Contas</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="text-outline"></ion-icon></span>
+                        <input type="text" id="nomeConta" required>
+                        <label>Nome da Conta</label>
+                    </div> 
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="cash-outline"></ion-icon></span>
+                        <input type="number" id="valorConta" required>
+                        <label>valor da Conta</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="pricetags-outline"></ion-icon></span>
+                        <input type="text" id="tipoConta" required>
+                        <label>Forma de Pagamento</label>
+                    </div>
+                    <div>
+                        <button onclick="adicionarConta()" class="btn">Adicionar Conta</button>
+                    </div>
+                    <div class="lista">
+                        <p>Já inseriu as contas?<a href="#"
+                        class="listaLink"> Confirme a sua lista!</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-box listaContas">
+                <h2>Cadastro de Contas</h2>
+                <ul id="listaContas"></ul>
+                <div class="analise">
+                        <p>Volte para o inicio <a href="#" 
+                            class="inicioLink">aqui</a></p>
+                        <p>Confirmou a lista?<a href="#"
+                        class="analiseLink"> Faça a análise dos seus gastos!</a></p>
+                </div>
+            </div>
+
+            <div class="form-box analiseContas">
+                <h2>Análise de Contas</h2>
+                <div class="input-box">
+                    <input type="number" id="salario" required>
+                    <label>Insira seu salário em reais</label>
+                </div>
+                <div>
+                    <button onclick="calcularPorcentagem()" class="btn">Calcular Porcentagem</button>
+                    <p id="porcentagem"></p>
+                </div>
+                <div class="inicio">
+                        <p>Terminou a análise?<a href="#"
+                        class="inicioLink"> Volte para o início!</a></p>
+                </div>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

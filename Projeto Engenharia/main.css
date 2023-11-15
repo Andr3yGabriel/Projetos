@@ -1,38 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 body {
-    background-color: #1c1c1c;
-    color: #FFFFFF;
-    font-family: monospace;
-    padding: 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgba(246,162,78,1) 0%, rgba(255,255,255,1) 35%);
+    background-size: cover;
+    background-position: center;
 }
-
-.title {
-  font-size: 48px;
-  color: red; 
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
 }
-
-.list-item {
-    margin-bottom: 24px;
-    font-size: 24px;
+.btn-start{
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    align-items: center;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #FFFF;
+    font-weight: 500;
+    text-decoration: none;
 }
-
-input{
-    height: 32px;
-    background-color: transparent;
-    color: white;
-    border-color: red;
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 6px;
-    font-family: monospace;
+.menu {
+    width: 100%;
+    font-size: 1.5em;
 }
-
-button {
-    height: 32px;
-    font-size: 16px;
-    padding: 8px;
-    background-color: red;
-    border-width: 0px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-family: monospace;
+.textarea {
+    width: 500px;
+    font-size: 1.0em;
+    color: black;
+}
+.cadastroContas h2{
+    font-size: 1.5em;
+    color: #FFFF;
+    text-align: center;
+}
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.wrapper .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: orange;
+    font-size: 2em;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+.wrapper .form-box.cadastroContas {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper .form-box.listaContas {
+    position: absolute;
+    transition: none;
+    transform: translateX(800px);
+}
+.wrapper .form-box.analiseContas {
+    position: absolute;
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper.lista .form-box.cadastroContas{
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper.lista .form-box.listaContas {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper.analise .form-box.cadastroContas {
+    transition: none;
+    transform: translateX(-400px);
+}
+.wrapper.analise .form-box.listaContas {
+    position: absolute;
+    transition: none;
+    transform: translateX(800px);
+}
+.wrapper.analise .form-box.form-box.analiseContas {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #000000;
+    margin: 30px 0;
+}
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #000000;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #000000;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #000000;
+    line-height: 57px;
+}
+.btn {
+    width: 100%;
+    height: 45px;
+    background: orange;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #FFFF;
+    font-weight: 500;
+}
+.lista {
+    font-size: 0.9em;
+    color: #000000;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.inicio {
+    font-size: 1.0em;
+    color: #000000;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.inicio p a{
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+.inicio p a:hover {
+    text-decoration: underline;
+}
+.lista p a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+.lista p a:hover {
+    text-decoration: underline;
+}
+.analise {
+    font-size: 1.0em;
+    color: #000000;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.analise p a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+.analise p a:hover {
+    text-decoration: underline;
 }
