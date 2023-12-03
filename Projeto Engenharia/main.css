@@ -14,29 +14,88 @@ body {
     background-size: cover;
     background-position: center;
 }
-header{
+.container{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.pagina1{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 20px 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     z-index: 99;
 }
-.btn-start{
-    width: 150px;
-    height: 45px;
+.pagina2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tutorial {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcome{
     text-align: center;
     align-items: center;
-    background: black;
+}
+.logo {
+    height: 100px;
+}
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #000;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+li {
+    list-style-type: none;
+}
+.btn-start{
+    width: 500px;
+    height: 150px;
+    text-align: center;
+    align-items: center;
     border: none;
     outline: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    color: #FFFF;
     font-weight: 500;
     text-decoration: none;
 }
@@ -46,12 +105,29 @@ header{
 }
 .textarea {
     width: 500px;
-    font-size: 1.0em;
+    text-align: justify;
+    justify-content: center;
+    font-size: 1.1em;
     color: black;
+}
+.textarea2 {
+    margin-top: 120px;
+    width: 500px;
+    text-align: justify;
+    justify-content: center;
+    font-size: 1.1em;
+    color: black;
+}
+.listaContas h2 {
+    position: fixed;
+    top: 0;
+    left: 100px;
+    text-align: center;
+    justify-content: center;
 }
 .cadastroContas h2{
     font-size: 1.5em;
-    color: #FFFF;
+    color: #000;
     text-align: center;
 }
 .wrapper {
@@ -66,62 +142,12 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     overflow: hidden;
-}
-.wrapper .icon-close{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45px;
-    height: 45px;
-    background: orange;
-    font-size: 2em;
-    color: #FFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom-left-radius: 20px;
-    cursor: pointer;
-    z-index: 1;
 }
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
-}
-.wrapper .form-box.cadastroContas {
-    transition: transform .18s ease;
-    transform: translateX(0);
-}
-.wrapper .form-box.listaContas {
-    position: absolute;
-    transition: none;
-    transform: translateX(800px);
-}
-.wrapper .form-box.analiseContas {
-    position: absolute;
-    transition: none;
-    transform: translateX(-400px);
-}
-.wrapper.lista .form-box.cadastroContas{
-    transition: none;
-    transform: translateX(-400px);
-}
-.wrapper.lista .form-box.listaContas {
-    transition: transform .18s ease;
-    transform: translateX(0);
-}
-.wrapper.analise .form-box.cadastroContas {
-    transition: none;
-    transform: translateX(-400px);
-}
-.wrapper.analise .form-box.listaContas {
-    position: absolute;
-    transition: none;
-    transform: translateX(800px);
-}
-.wrapper.analise .form-box.form-box.analiseContas {
-    transition: transform .18s ease;
-    transform: translateX(0);
 }
 .input-box {
     position: relative;
@@ -143,7 +169,7 @@ header{
 }
 .input-box input:focus~label,
 .input-box input:valid~label {
-    top: -5px;
+    top: 5px;
 }
 .input-box input {
     width: 100%;
@@ -163,6 +189,31 @@ header{
     color: #000000;
     line-height: 57px;
 }
+.select-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #000000;
+    margin: 30px 0;
+}
+.select-box select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #000000;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.select-box .icon {
+    position: absolute;
+    right: 20px;
+    font-size: 1.2em;
+    color: #000000;
+    line-height: 57px;
+}
 .btn {
     width: 100%;
     height: 45px;
@@ -174,49 +225,5 @@ header{
     font-size: 1em;
     color: #FFFF;
     font-weight: 500;
-}
-.lista {
-    font-size: 0.9em;
-    color: #000000;
-    text-align: center;
-    font-weight: 500;
-    margin: 25px 0 10px;
-}
-.inicio {
-    font-size: 1.0em;
-    color: #000000;
-    text-align: center;
-    font-weight: 500;
-    margin: 25px 0 10px;
-}
-.inicio p a{
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-}
-.inicio p a:hover {
-    text-decoration: underline;
-}
-.lista p a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-}
-.lista p a:hover {
-    text-decoration: underline;
-}
-.analise {
-    font-size: 1.0em;
-    color: #000000;
-    text-align: center;
-    font-weight: 500;
-    margin: 25px 0 10px;
-}
-.analise p a {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
-}
-.analise p a:hover {
-    text-decoration: underline;
+    margin-bottom: 10px;
 }
